@@ -747,6 +747,11 @@ h2.heading span,h3.heading span {
     color: #fff;
 }
 
+.contact a:hover {
+    color: #000;
+}
+
+
 .contact h3.heading span {
     background: #fff;
 }
@@ -847,6 +852,11 @@ form.contact-form {
     color: #ffffff;
     font-size: 14px;
 }
+
+.projects a:hover {
+    color: #000;
+}
+
 
 .contact-info p span {
     display: block;
