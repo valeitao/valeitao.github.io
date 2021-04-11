@@ -9,9 +9,23 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <head>
 	<title>Vasco Leitão | Portfolio</title>
 	<!-- Meta tag Keywords -->
+
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta charset="UTF-8" />
 	<meta name="keywords" content="Creative Profile Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+	<!-- //Meta tag Keywords -->
+	
+	<!-- Custom-Files and Dependencies-->
+	<link rel="stylesheet" href="css/bootstrap.css"><!-- Bootstrap-Core-CSS -->
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="css/custom.css"><!--Custom-Bootstrap-CSS -->
+	<link rel="stylesheet" href="css/style.css" type="text/css" media="all" /><!-- Style-CSS -->
+	<link rel="stylesheet" href="css/font-awesome.min.css"><!-- Font-Awesome-Icons-CSS -->
+	<!-- //Custom-Files and Dependencies -->
+
+	<!-- Scripts -->
 	<script>
 		addEventListener("load", function () {
 			setTimeout(hideURLbar, 0);
@@ -21,17 +35,19 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			window.scrollTo(0, 1);
 		}
 
-		function submitForm() {
-		   // Get the first form with the name
-		   // Usually the form name is not repeated
-		   // but duplicate names are possible in HTML
-		   // Therefore to work around the issue, enforce the correct index
-		   var frm = document.getElementsByName('contact-form')[0];
-		   frm.submit(); // Submit the form
-		   frm.reset();  // Reset all form data
-		   return false; // Prevent page refresh
+		function validateForm() {
+		  const re = /\S+@\S+\.\S+/;
+		  if(!re.test(document.forms["contact-form"]["email"].value)) {
+		  	alert("Email format must be correct.")
+		  	return false;
+		  }
+
+		  alert("Thank you for your contact. I will answer ASAP.")
+		  document.getElementById("contact-form").reset(); 
+		  return true;
 		}
 	</script>
+
 
 	<!-- emailJS support -->
 	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
@@ -40,18 +56,12 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	      emailjs.init("user_p4R3VCtlBzzkk8XaViSuD");
 	   })();
 	</script>
+
 	<script type="text/javascript">
         window.onload = function() {
             document.getElementById('contact-form').addEventListener('submit', function(event) {
                 event.preventDefault();
-                // generate a five digit number for the contact_number variable
                 this.contact_number.value = Math.random() * 100000 | 0;
-                /*this.to_name.value = "Vasco Leitão"*/
-                console.log(this);
-
-
-                // these IDs from the previous steps
-                /*'template_6f4l9pl'*/
                 emailjs.sendForm('service_hvb3w41', 'template_6f4l9pl', this)
                     .then(function() {
                         console.log('SUCCESS!');
@@ -61,22 +71,12 @@ License URL: http://creativecommons.org/licenses/by/3.0/
             });
         }
     </script>
-
-	<!-- //Meta tag Keywords -->
-	
-	<!-- Custom-Files -->
-	<link rel="stylesheet" href="css/bootstrap.css"><!-- Bootstrap-Core-CSS -->
-	<link rel="stylesheet" href="css/custom.css"><!--Custom-Bootstrap-CSS -->
-	<link rel="stylesheet" href="css/style.css" type="text/css" media="all" /><!-- Style-CSS -->
-	<link rel="stylesheet" href="css/font-awesome.min.css"><!-- Font-Awesome-Icons-CSS -->
-	<!-- //Custom-Files -->
+    <!-- //Scripts -->
 	
 	<!-- Web-Fonts -->
 	<link href="//fonts.googleapis.com/css?family=Libre+Franklin:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
-
 	<link rel="preconnect" href="https://fonts.gstatic.com">
 	<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet">
-
 	<!-- //Web-Fonts -->
 	
 </head>
@@ -106,7 +106,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 								</li> -->
 								<li class=""><a href="#edu-exp">Experience </a></li>
 								<li class=""><a href="#skills">Skills </a></li>
-								<li class=""><a href="#projects">Sports </a></li>
+								<li class=""><a href="#projects">Projects </a></li>
+								<li class=""><a href="#sports">Sports </a></li>
 								<li class=""><a href="#contact">Contact Me</a></li>
 							</ul>
 					</nav>
@@ -144,74 +145,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						<a href="https://ciencias.ulisboa.pt/" target="_blank">Faculty of Sciences of the University of Lisbon</a>. I have been also writing my dissertation in 
 						<a href="https://www.lasige.di.fc.ul.pt/" target="_blank">LASIGE</a>, under the lines of <b>Data and Systems Intelligence</b> 
 						and <b>Resilient Distributed and Networked Systems</b>.</p>
-						<!--<a href="attachments/" class="banner-button btn mt-md-5 mt-3 scroll" download="CV_EN_VascoLeitao.pdf">Curriculum Vitae</a>-->
 						<a class="banner-button btn mt-md-5 mt-3 scroll" onclick="window.open('attachments/CV_EN_VascoLeitao.pdf')">Curriculum Vitae</a>
 					</div>
 				</div>
 			</section>
 			<!-- //banner -->
-			
-			<!-- about us -->
-			<!-- <section class="banner-bottom" id="about">
-					<div class="inner-sec">
-						<div class="row middle-grids">
-							<div class="col-lg-7 advantage-grid-info">
-								<div class="advantage_left">
-									<h2 class="heading text-capitalize mb-4">About Me <span></span></h2>
-									<h4>I'm a Professional Web Designer </h4>
-									<p class="mb-4">Nulla pellentesque mi non laoreet eleifend. Integer sed porttitor mollisar lorem, at molestie
-									arcust pulvinar ut. Proina fermentum est. Cras mist ipsum, consectetur ipsum in, egestas tellus ipsu vestibulum
-									tellus accumsan nec tristique justo.</p>
-									<a href="#" class="banner-button1 btn">Download Cv</a>
-									<a href="#contact" class="banner-button2 btn">Hire Me</a>
-								</div>
-							</div>
-							<div class="col-lg-5 advantage-grid-info1">
-								<div class="advantage_left1 mt-lg-0 mt-4">
-									<img src="images/about.jpg" class="img-fluid" alt="">
-								</div>
-							</div> 
-						</div>
-					</div>
-			</section> -->
-			<!-- //about us -->
-			
-			<!-- services -->
-			<!--<section class="services" id="services">
-				<div class="inner-sec-layer">
-					<h3 class="heading text-capitalize mb-md-5 mb-4">Services <span></span></h3>
-					<div class="row middle-grids">
-						<div class="col-lg-4 col-md-6 service-in text-center">
-							<div class="card">
-								<div class="card-body">
-									<span class="fa fa-desktop mb-4"></span>
-									<h5 class="card-title text-uppercase">Designing</h5>
-									<p class="card-text">Proina fermentum eset sed. Cras mist ipsum, dolor et consectetur ipsum.</p>
-								</div>
-							</div>
-						</div>
-						 <div class="col-lg-4 col-md-6 service-in text-center mt-md-0 mt-4">
-							<div class="card">
-								<div class="card-body">
-									<span class="fa fa-pencil-square-o mb-4"></span>
-									<h5 class="card-title text-uppercase">Developing</h5>
-									<p class="card-text">Proina fermentum eset sed. Cras mist ipsum, dolor et consectetur ipsum.</p>
-								</div>
-							</div>
-						</div>
-						<div class="col-lg-4 col-md-6 service-in text-center mt-lg-0 mt-4">
-							<div class="card">
-								<div class="card-body">
-									<span class="fa fa-window-restore mb-4"></span>
-									<h5 class="card-title text-uppercase">Responsive</h5>
-									<p class="card-text">Proina fermentum eset sed. Cras mist ipsum, dolor et consectetur ipsum.</p>
-								</div>
-							</div>
-						</div>						
-					</div>
-				</div>
-			</section>-->
-			<!-- //services -->
 
 			<!-- tabs -->
 			<section class="edu-exp" id="edu-exp">
@@ -321,82 +259,137 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 									<b>NumPy</b>, <b>SciPy</b>, <b>ScikitLearn</b>, <b>Keras</b>, <b>Pandas</b>, <b>NLTK</b>, and <b>SpaCy</b>.</p>
 							</div>
 						</div>
-						<!--<div class="col-lg-6 mt-lg-0 mt-4">
-							<div class="row text-center">
-								<div class="col-lg-4 col-sm-4 col-6 count-num-txt mb-4">
-								  <div class="number-w3three-info icon1">
-									<span class="fa fa-briefcase mb-sm-4 mb-2"></span>
-									<h5>10</h5>
-									<h6 class="pt-2">Experience</h6>
-								  </div>
-								</div>
-								<div class="col-lg-4 col-sm-4 col-6 count-num-txt mb-4">
-								  <div class="number-w3three-info icon2">
-									<span class="fa fa-clone mb-sm-4 mb-2"></span>
-									<h5>250+</h5>
-									<h6 class="pt-2">Projects</h6>
-								  </div>
-								</div>
-								<div class="col-lg-4 col-sm-4 col-6 count-num-txt mb-4">
-								  <div class="number-w3three-info icon3">
-									<span class="fa fa-trophy mb-sm-4 mb-2"></span>
-									<h5>150</h5>
-									<h6 class="pt-2">Awards</h6>
-								  </div>
-								</div>
-							</div>
-							<p class="">Nulla pellentesque mi non laoreet eleifend. Integer sed porttitor mollisar lorem, at molestie
-							arcust pulvinar ut. Proina fermentum est cras mist ipsum..</p>
-					  	</div> -->
 					</div>
 				</div>
 			</section>
 			<!-- //skills -->
-			
+
 			<!-- Projects -->
 			<section class="projects" id="projects">
+				<h3 class="heading text-capitalize mb-md-5 mb-4">Personal Projects <span></span></h3>
+				<div class="container text-center my-3">
+				    <div class="row mx-auto my-auto">
+				        <div id="myCarousel" class="carousel slide w-100" data-interval="false">
+				            <div class="carousel-inner" role="listbox">
+				                <div class="carousel-item py-5 active">
+				                    <div class="row">
+				                        <div class="col-sm-6">
+				                            <div class="card">
+				                              <div class="card-body">
+				                                <h4 class="card-title text-left">
+				                                	<a href="https://github.com/valeitao/pet_finder_adoption_prediction" target="_blank">Pet Finder Adoption Prediction</a>
+				                            	</h4>
+				                                <p class="card-text text-left">Masters' degree project focused on using <b>Machine Learning supervised 
+				                                and unsupervised methods to predict pet adoption</b>. Supervised methods include classification with
+				                            	Linear Models, Rule Models or Distance-Based Models, among others. Unsupervised methods include
+				                            	Association Rule Mining and Clustering.</p>
+				                              </div>
+				                              <div class="card-footer text-muted">
+											    Grade: 19/20
+											  </div>
+				                              <div class="card-footer text-muted">
+											    Machine Learning, FCUL, 2019
+											  </div>
+				                            </div>
+				                        </div>
+				                        <div class="col-sm-6">
+				                            <div class="card">
+				                              <div class="card-body">
+				                                <h4 class="card-title text-left">
+				                                	<a href="https://github.com/valeitao/us_accident_data_system" target="_blank">US Accident Data Warehouse</a>
+				                            	</h4>
+				                                <p class="card-text text-left">Masters' degree project focused on <b>creating a data warehouse
+				                                describing car accidents in the United States, between 2016 and 2019</b>. Project divided in three phases:
+				                                idealizing the warehouse, its dimensions and facts; populating with PostgreSQL and assessing
+				                                possible growth over the years; building OLAP queries.
+				                              </div>
+				                              <div class="card-footer text-muted">
+											    Grade: 17/20
+											  </div>
+				                              <div class="card-footer text-muted">
+											    Data Processing Technologies, FCUL, 2020
+											  </div>
+				                            </div>
+				                        </div>
+				                    </div>
+				                </div>
+				                <div class="carousel-item py-5">
+				                    <div class="row">
+				                        <div class="col-sm-6">
+				                            <div class="card">
+				                              <div class="card-body">
+				                                <h4 class="card-title text-left">
+				                                	<a href="https://github.com/valeitao/washington_bicycle_rental" target="_blank">Washington Bicycle Rental</a>
+				                                </h4>
+				                                <p class="card-text text-left">Masters' project focused on <b>building models able to predict the 
+				                                	number of bicycles rented in a bike-sharing system, in Washington D.C., United States,</b> integrating
+				                                	clustering methods and ensemble, boosting, and bagging regressors.
+				                              </div>
+				                              <div class="card-footer text-muted">
+											    Grade: 16/20
+											  </div>
+				                              <div class="card-footer text-muted">
+											    Complements of Machine Learning, FCUL, 2020
+											  </div>
+				                            </div>
+				                        </div>
+				                        <div class="col-sm-6">
+				                            <div class="card">
+				                              <div class="card-body">
+				                                <h4 class="card-title text-left">Message and File Sharing</h4>
+				                                <p class="card-text text-left">Bachelor project consisting in <b>development of an application for communication and file sharing between clients.</b> Software development using sockets for communication, RSA and TLS/SSL cryptography, and firewall configuations.</p>
+				                              </div>
+				                              <div class="card-footer text-muted">
+											    Grade: 18/20
+											  </div>
+				                              <div class="card-footer text-muted">
+											    Security and Dependability, FCUL, 2019
+											  </div>
+				                            </div>
+				                        </div>
+				                    </div>
+				                </div>
+				            </div>
+				        </div>
+				    </div>
+				    <div class="row">
+				        <div class="col-12">
+				            <a class="carousel-control-prev text-dark" href="#myCarousel" role="button" data-slide="prev">
+				                <span class="fa fa-chevron-left" aria-hidden="true"></span>
+				                <span class="sr-only">Previous</span>
+				            </a>
+				            <a class="carousel-control-next text-dark" href="#myCarousel" role="button" data-slide="next">
+				                <span class="fa fa-chevron-right" aria-hidden="true"></span>
+				                <span class="sr-only">Next</span>
+				            </a>
+				        </div>
+				    </div>
+				</div>				
+            </section>
+			<!-- //Sports -->
+
+
+
+
+			<!-- Sports -->
+			<section class="sports" id="sports">
 				<div class="inner-sec">
 					<h3 class="heading text-capitalize mb-md-5 mb-4">sports <span></span></h3>
 					<p class="card-text mb-4">I'm a basketball enthusiast, practiced the sport during my childhood, and in 2019 I got my <b>Grade I Basketball Coach</b> certification, issued by the Portuguese Institute of Sport and Youth.</p>
-					<div class="container-fluid">
-						<div class="row-force-margin">
-							<div class="col-lg-8">
-								<p class="card-text mb-0 text-right">From September 2017 to July 2019, I coached the minibasket section of <a href="https://www.instagram.com/estoril.basket/" target="_blank">Estoril Basket Clube</a>, working with children aged from 6 to 12 years old, introducing the basic concepts, teaching them how to work as a team, and playing tournaments each month. Basketball classes were taught in Portuguese.</p>
+					<div class="container">
+						<div class="row">
+							<div class="col-sm-8">
+								<p class="card-text mb-3 text-left">From September 2017 to July 2019, I coached the minibasket section of <a href="https://www.instagram.com/estoril.basket/" target="_blank">Estoril Basket Clube</a>, working with children aged from 6 to 12 years old, introducing the basic concepts, teaching them how to work as a team, and playing tournaments each month. Basketball classes were taught in Portuguese.</p>
+								<p class="card-text mb-3 text-left">From September 2018 to July 2019, I was the Head Coach of Division 4 and 5 (ages 9-12, Boys and Girls) teams of <a href="https://www.dominics-int.org/" target="_blank">St. Dominic's International School</a>, where I had the chance to introduce students to the game, learning the fundamentals while improving motor and coordination skills. Classes taught in English.</p>
 							</div>
-							<div class="col-lg-4">
-								<div class="col-md-9 col-9 gal-img">
-									<a href="#gal1"><img src="images/estoril_basket.jpg" alt="news image" class="img-fluid"></a>
-								</div>
-							</div>
-						</div>
-						<div class="row-force-margin">
-							<div class="col-lg-8">
-								<p class="card-text mb-0 text-right">From September 2018 to July 2019, I was the Head Coach of Division 4 and 5 (ages 9-12, Boys and Girls) teams of <a href="https://www.dominics-int.org/" target="_blank">St. Dominic's International School</a>, where I had the chance to introduce students to the game, learning the fundamentals while improving motor and coordination skills. Classes taught in English.</p>
-							</div>
-							<div class="col-lg-4">
-								<div class="col-md-9 col-9 gal-img">
-									<a href="#gal1"><img src="images/estoril_basket.jpg" alt="news image" class="img-fluid"></a>
-								</div>
+							<div class="col-sm-4">
+								<img src="images/estoril_basket.jpg" alt="basketball coaching image" class="img-fluid">
 							</div>
 						</div>
 					</div>
-					<!--<div class="row news-grids text-center">
-						<div class="col-md-3 col-6 gal-img">
-							<a href="#gal1"><img src="images/p1.jpg" alt="news image" class="img-fluid"></a>
-						</div>
-						<div class="col-md-3 col-6 gal-img">
-							<a href="#gal1"><img src="images/p2.jpg" alt="news image" class="img-fluid"></a>
-						</div>
-						<div class="col-md-3 col-6 gal-img">
-							<a href="#gal1"><img src="images/p3.jpg" alt="news image" class="img-fluid"></a>
-						</div>
-						<div class="col-md-3 col-6 gal-img">
-							<a href="#gal1"><img src="images/p4.jpg" alt="news image" class="img-fluid"></a>
-						</div>
-					</div>-->
                 </div>
             </section>
-			<!-- //Projects -->
+			<!-- //Sports -->
 
 		</div>
 		<!-- //main -->
@@ -405,7 +398,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		<section class="contact" id="contact">
 			<div class="inner-sec">
 				<h3 class="heading text-capitalize mb-4">Get In Touch <span></span></h3>
-				<form id="contact-form" name="contact-form" class="contact-form" method="post" enctype="text/plain">
+				<form id="contact-form" name="contact-form" class="contact-form" method="post" enctype="text/plain" onkeydown="return event.key != 'Enter';">
 					<input type="hidden" name="contact_number">
 					<input type="hidden" name="to_name" value="Vasco">
 					<div class="row">
@@ -429,7 +422,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						</div>
 					</div>
 					<div class="form-group mb-0">
-						<button type="submit" class="btn btn-default">Submit</button>
+						<button type="submit" class="btn btn-default" id="contact-submit" onclick="return validateForm()">Submit</button>
 						<p><small>(Supported by <a href="https://www.emailjs.com/" target="_blank">EmailJS</a>)</small></p>
 					</div>
 				</form>

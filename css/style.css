@@ -96,10 +96,6 @@ ol {
     color: #707579;
 }
 
-label {
-    margin: 0;
-}
-
 a:focus,
 a:hover {
     text-decoration: none;
@@ -285,7 +281,7 @@ li > a:only-child:after { content: ''; }
 	}
 	.social {
 		position: absolute;
-		top: 3%;
+		top: 0.1%;
 	}
 	/* Display Dropdown when clicked on Parent Lable */
 	[id^=drop]:checked + ul {
@@ -469,7 +465,7 @@ a.banner-button2 {
     -ms-border-radius: 0;
     -o-border-radius: 0;
 }
-.banner-bottom, .banner, .inner-sec-layer, .contact, .skills, .projects {
+.banner-bottom, .banner, .inner-sec-layer, .contact, .skills, .sports, .projects {
     padding: 4em 5em;
 }
 
@@ -816,16 +812,38 @@ form.contact-form {
 
 /*-- //contact --*/
 
-/*-- projects --*/
-.projects{
-	background: #f6f6f6;
+/*-- sports --*/
+.sports{
+	background: #fff;
 }
 .gal-img {
     margin-bottom: 1em;
     padding-right: 0px;
 }
 
-.project-in p.card-text {
+.sport-in p.card-text {
+    font-size: 14px;
+}
+
+.sports a {
+    color: #000;
+}
+
+.sports a:hover {
+    color: #007bff;
+}
+/*-- //sports --*/
+
+/*-- projects --*/
+.projects{
+    background: #f6f6f6;
+}
+.gal-img {
+    margin-bottom: 1em;
+    padding-right: 0px;
+}
+
+.projects-in p.card-text {
     font-size: 14px;
 }
 
@@ -836,10 +854,11 @@ form.contact-form {
 .projects a:hover {
     color: #007bff;
 }
-
-
-
 /*-- //projects --*/
+
+
+
+
 
 /*-- footer --*/
 
@@ -853,7 +872,7 @@ form.contact-form {
     font-size: 14px;
 }
 
-.projects a:hover {
+.sports a:hover {
     color: #000;
 }
 
@@ -1054,7 +1073,7 @@ a.move-top span{
     .logo h1 a {
 		font-size: 30px;
 	}
-	.banner-bottom, .banner, .inner-sec-layer, .contact, .skills, .edu-exp, .projects {
+	.banner-bottom, .banner, .inner-sec-layer, .contact, .skills, .edu-exp, .sports, .projects {
 		padding: 4em 3em;
 	}
 	p {
@@ -1124,7 +1143,7 @@ a.move-top span{
 }
 
 @media(max-width: 415px) {
-   .banner-bottom, .banner, .inner-sec-layer, .contact, .skills, .edu-exp, .projects {
+   .banner-bottom, .banner, .inner-sec-layer, .contact, .skills, .edu-exp, .sports, .projects {
 		padding: 3em 1.5em;
 	}
 	header {
