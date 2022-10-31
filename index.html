@@ -92,13 +92,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						<label for="drop" class="toggle mt-lg-0 mt-sm-1"><span class="fa fa-bars" aria-hidden="true"></span></label>
 						<input type="checkbox" id="drop" />
 							<ul class="menu">
-								<li class="active"><a href="index.html">Home </a></li>
 								<li class=""><a href="#about">About </a></li>
 								<li class=""><a href="#edu-exp">Experience </a></li>
-								<li class=""><a href="#skills">Skills </a></li>
 								<li class=""><a href="#projects">Projects </a></li>
 								<li class=""><a href="#sports">Sports </a></li>
-								<!-- <li class=""><a href="#contact">Contact Me</a></li>-->
 							</ul>
 					</nav>
 				</div>
@@ -113,14 +110,6 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	</header>
 	<!-- //header -->
 	
-	<!-- logo -->
-	<!-- <div class="container my-lg-4 mb-4">
-		<div class="logo text-center">
-			<h1><a href="index.html"><span class="fa fa-diamond"></span> Creative Profile</a></h1>
-		</div>
-	</div> -->
-	<!-- //logo -->
-	
 	<!-- container -->
 	<div class="container">
 		<!-- main -->
@@ -131,7 +120,12 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				<div class="col-md-12">
 					<div class="banner-info">
 						 <h2 class="heading-banner text-capitalize"><span>Vasco Leitão</span></h2>
-						<p class=" mt-3">I am a recent graduate in the Master's in Data Science of the <a href="https://ciencias.ulisboa.pt/" target="_blank">Faculty of Sciences of the University of Lisbon</a>. I am an avid learner with a soft spot for numbers and sports, who also loves well-structured tables, though I have no problem cleaning them beforehand, of course. My friends love to call me a <i>nerd</i>, but I like to believe in the capabilities of the area where I work.</p>
+						<p class=" mt-3">
+							I am a Data Engineer at <a href="https://www.trouva.com/" target="_blank">Trouva</a> and a graduate in 
+							the Master in Data Science of the <a href="https://ciencias.ulisboa.pt/" target="_blank">Faculty of Sciences of the University of Lisbon</a>. 
+							I consider myself an avid learner with a soft spot for numbers and sports, who also loves well-structured tables, 
+							though I have no problem cleaning them beforehand, of course. My friends love to call me a <i>nerd</i>, 
+							but I like to believe in the capabilities of the area where I work.</p>
 						<a class="banner-button btn mt-md-5 mt-3 scroll" onclick="window.open('attachments/CV_EN_VascoLeitao.pdf')">Curriculum Vitae</a>
 					</div>
 				</div>
@@ -145,12 +139,29 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					<div class="edu-exp-grids">
 						<div class="tab-main text-center">
 							<input id="tab1" type="radio" name="tabs" class="w3pvt-sm" checked>
-							<label for="tab1"><span class="fa fa-graduation-cap" aria-hidden="true"></span>Education</label>
-							<input id="tab2" type="radio" class="w3pvt-sm" name="tabs">
-							<label for="tab2"><span class="fa fa-briefcase" aria-hidden="true"></span>Research</label>
+							<label for="tab1"><span class="fa fa-briefcase" aria-hidden="true"></span>Working</label>
+							<input id="tab2" type="radio" name="tabs" class="w3pvt-sm">
+							<label for="tab2"><span class="fa fa-graduation-cap" aria-hidden="true"></span>Education</label>
 							<input id="tab3" type="radio" class="w3pvt-sm" name="tabs">
-							<label for="tab3"><span class="fa fa-book" aria-hidden="true"></span>Publications</label>
+							<label for="tab3"><span class="fa fa-flask" aria-hidden="true"></span>Research</label>
+							<input id="tab4" type="radio" class="w3pvt-sm" name="tabs">
+							<label for="tab4"><span class="fa fa-book" aria-hidden="true"></span>Publications</label>
 							<section id="content1">
+								<div class="row text-left">
+									<div class="col-lg-12 inner-w3pvt-wrap">
+										<h4>Junior Data Engineer @ Trouva</h4>
+										<h6>January 2022 - </h6>
+										<p>Relevant processes:</p>
+										<ul>
+											<li>Migration from Google Analytics 360 to <b>Google Analytics 4</b>.</li>
+										 	<li>Creation of automated pipelines in cooperation with Marketing and Finance teams, with <b>Prefect</b>.</li>
+										 	<li>Ingestion of various data sources with <b>Fivetran, Stitch.</b></li>
+											<li>Support on various Amazon Web Services processes, such as <b>Redshift, S3, Secrets Manager</b>.</li>
+											<li>Data transformation on <b>dbt</b>.</li>
+										</ul> 
+									</div>
+							</section>
+							<section id="content2">
 								<div class="row text-left">
 									<div class="col-lg-6 inner-w3pvt-wrap">
 										<h4>Master Degree in Data Science</h4>
@@ -181,7 +192,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 										</ul>
 									</div>
 							</section>
-							<section id="content2">
+							<section id="content3">
 								<div class="row text-left">
 									<div class="col-lg-6 inner-w3pvt-wrap">
 										<h4>MSc Thesis @ LASIGE</h4>
@@ -198,7 +209,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 									</div>
 								</div>
 							</section>
-							<section id="content3">
+							<section id="content4">
 								<div class="row text-left">
 									<div class="col-lg-12 inner-w3pvt-wrap">
 										<h4><i>SRXCRM: Discovering Association Rules Between System Requirements and Product Specifications</i></h4>
@@ -213,36 +224,6 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				</div>
 			</section>
 			<!-- tabs -->
-			
-			<!-- skills -->
-			<section class="skills" id="skills">
-				<div class="inner-sec">
-					<h3 class="heading text-capitalize mb-md-5 mb-4">Skills <span></span></h3>
-					<div class="row middle-grids">
-						<div class="col-lg-12">
-								<div class="skills-left">
-									<p class="card-text mb-4">I have obtained a variety of skills based in my experience during the Bachelor and Masters degrees, 
-										in the areas of <b>Computer Science</b>, <b>Data Science</b>, <b>Web Development</b> and even <b>Typesetting</b>.</p>
-									<div class="container">
-										<div class="row">
-											<div class="col-lg-10">
-												<h5>Python / Java</h5>
-												<p class="mb-4 bg clr-eighty-five"></p>
-												<h5>SQL / R / LaTeX</h5>
-												<p class="mb-4 bg clr-seventy-five"></p>
-												<h5>Web Development</h5>
-												<p class="mb-4 bg clr-fifty"></p>
-											</div>
-										</div>
-									</div>
-									<p class="card-text mb-4">I also have experience in tools and libraries such as 
-									<b>NumPy</b>, <b>SciPy</b>, <b>ScikitLearn</b>, <b>Keras</b>, <b>Pandas</b>, <b>NLTK</b>, and <b>SpaCy</b>.</p>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
-			<!-- //skills -->
 
 			<!-- Projects -->
 			<section class="projects" id="projects">
